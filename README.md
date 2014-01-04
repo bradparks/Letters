@@ -7,9 +7,11 @@ You can view canvas result here with a bit of 3d and rainbow highlight refresh f
 https://rawgithub.com/Justinfront/Letters/master/web/index.html
 
 Basic usage:
+
 var path = Path.generateVectorText( 'text', 100., 50., .7, 300., 22.);
 
-3D rotation
+3D rotation:
+
 path = path.rotateXYZ( Math.PI/10, Math.PI/3, Math.PI/10, 1 );
 
 then depending on platform you just iterate and switch on the path case.
