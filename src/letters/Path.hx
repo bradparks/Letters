@@ -498,7 +498,7 @@ class Path {
                     x2 = x2/s;
                     y2 = y2/s;
                     v0 = [ x, y, x2, y2 ];
-                case FillColor, OutlineColor:
+                case _:
             }
             var commandData: CommandData = new T2( v0, v1 );
             return commandData;
