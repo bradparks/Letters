@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014, Justinfront Ltd
 project: Letters
 author: Justin L Mills
@@ -25,3 +26,20 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+package letters.targetJS;
+import js.Browser;
+import letters.targetJS.SetupCanvas;
+import js.html.Element;
+import js.html.ImageElement;
+import js.html.CanvasRenderingContext2D;
+class BasicJs {
+    public var surface: CanvasRenderingContext2D;
+    public function new() {
+        var setup = new SetupCanvas();
+        surface = setup.surface;
+        var body = Browser.document.body;
+        body.appendChild( setup.dom );
+    }
+}

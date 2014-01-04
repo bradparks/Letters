@@ -1,3 +1,4 @@
+/*
 Copyright (c) 2014, Justinfront Ltd
 project: Letters
 author: Justin L Mills
@@ -25,3 +26,33 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
+package letters;
+import haxe.ds.StringMap;
+class KernPairs {
+    private var lookup: StringMap<Float>;
+    private var last: String = '';
+    public function new() {
+        lookup = new StringMap<Float>();
+        var kernStr = haxe.Resource.getString( 'kernPairs' );
+        var kernPairStr = kernStr.split('\n');
+        var arr: Array<String>;
+        kernPairStr.shift();
+        for( pairStr in kernPairStr ) {
+            arr = pairStr.split(' ');
+            lookup.set( arr[0], Std.parseFloat( arr[1] ) );
+        }
+    }
+    public function getNextSpace( letter: String ){
+        var pair = last + letter; 
+        last = letter;
+        return getSpacing( pair );
+    }
+    private function getSpacing( pair: String ): Float
+    {
+        if( pair.length != 2 ) return 0;
+        if( lookup.exists( pair ) ) return -lookup.get( pair );
+        return 0;
+    }
+}
