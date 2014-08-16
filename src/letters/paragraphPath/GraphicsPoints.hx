@@ -13,16 +13,16 @@ class GraphicsPoints
         var string: String;
         
         #if flash
-        g.lineStyle( 0, 0xdd33dd, 1); #end
+        g.lineStyle( 0, 0x333333, 1); #end
         #if js
         var col: ColorJS;
-        //var col: StringHex = 0xdd33dd;
-        g.strokeStyle = string = col = 0xdd33dd;
+        g.fillStyle = "rgba("+ 0xff +"," + 0x00 +","+0xff+","+0.0 +")";
+        g.strokeStyle = string = col = 0x333333;
         g.lineWidth = 1; #end
         
         g.moveTo( arr[ 0 ].x, arr[ 0 ].y );
         for( p in arr ) {//RainbowPencilColours.random()
-            ///g.lineStyle( 0, 0xff0000 , 1);
+            //g.lineStyle( 0, 0xff0000 , 1);
             g.lineTo( p.x, p.y );
         }
         #if js

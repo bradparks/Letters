@@ -38,7 +38,6 @@ class ParagraphPathDemo {
         points = MathPoints.generateMidPoints( pointMaker.points );
         var equaPoints = Equa.getEquaPoints( points, numSections );
         var sidePoints = Sides.getPoints( equaPoints.points );
-        
         // render shape...
         //var snake = new Snake( sidePoints, numSections );
         var sentence = 'hi my name is justin and i live in bath a small city in the south west of the uk';
