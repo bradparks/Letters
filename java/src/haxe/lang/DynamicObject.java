@@ -22,21 +22,21 @@ public  class DynamicObject extends haxe.lang.HxObject
 	}
 	
 	
-	public static   void __hx_ctor_haxe_lang_DynamicObject(haxe.lang.DynamicObject __temp_me14)
+	public static   void __hx_ctor_haxe_lang_DynamicObject(haxe.lang.DynamicObject __temp_me16)
 	{
-		__temp_me14.__hx_hashes = new haxe.root.Array<java.lang.String>(new java.lang.String[]{});
-		__temp_me14.__hx_dynamics = new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{});
-		__temp_me14.__hx_hashes_f = new haxe.root.Array<java.lang.String>(new java.lang.String[]{});
-		__temp_me14.__hx_dynamics_f = new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{});
+		__temp_me16.__hx_hashes = new haxe.root.Array<java.lang.String>(new java.lang.String[]{});
+		__temp_me16.__hx_dynamics = new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{});
+		__temp_me16.__hx_hashes_f = new haxe.root.Array<java.lang.String>(new java.lang.String[]{});
+		__temp_me16.__hx_dynamics_f = new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{});
 	}
 	
 	
-	public static   void __hx_ctor_haxe_lang_DynamicObject(haxe.lang.DynamicObject __temp_me13, haxe.root.Array<java.lang.String> __hx_hashes, haxe.root.Array<java.lang.Object> __hx_dynamics, haxe.root.Array<java.lang.String> __hx_hashes_f, haxe.root.Array<java.lang.Object> __hx_dynamics_f)
+	public static   void __hx_ctor_haxe_lang_DynamicObject(haxe.lang.DynamicObject __temp_me15, haxe.root.Array<java.lang.String> __hx_hashes, haxe.root.Array<java.lang.Object> __hx_dynamics, haxe.root.Array<java.lang.String> __hx_hashes_f, haxe.root.Array<java.lang.Object> __hx_dynamics_f)
 	{
-		__temp_me13.__hx_hashes = __hx_hashes;
-		__temp_me13.__hx_dynamics = __hx_dynamics;
-		__temp_me13.__hx_hashes_f = __hx_hashes_f;
-		__temp_me13.__hx_dynamics_f = __hx_dynamics_f;
+		__temp_me15.__hx_hashes = __hx_hashes;
+		__temp_me15.__hx_dynamics = __hx_dynamics;
+		__temp_me15.__hx_hashes_f = __hx_hashes_f;
+		__temp_me15.__hx_dynamics_f = __hx_dynamics_f;
 	}
 	
 	
@@ -190,7 +190,7 @@ public  class DynamicObject extends haxe.lang.HxObject
 		 else 
 		{
 			int res2 = haxe.lang.FieldLookup.findHash(field, this.__hx_hashes_f);
-			if (( res >= 0 )) 
+			if (( res2 >= 0 )) 
 			{
 				this.__hx_hashes_f.splice(res2, 1);
 				this.__hx_dynamics_f.splice(res2, 1);
@@ -214,7 +214,7 @@ public  class DynamicObject extends haxe.lang.HxObject
 		 else 
 		{
 			int res2 = haxe.lang.FieldLookup.findHash(field, this.__hx_hashes);
-			if (( res >= 0 )) 
+			if (( res2 >= 0 )) 
 			{
 				this.__hx_hashes.splice(res2, 1);
 				this.__hx_dynamics.splice(res2, 1);
@@ -232,21 +232,21 @@ public  class DynamicObject extends haxe.lang.HxObject
 	{
 		{
 			{
-				java.lang.Object __temp_iterator24 = this.__hx_hashes.iterator();
-				while (haxe.lang.Runtime.toBool(haxe.lang.Runtime.callField(__temp_iterator24, "hasNext", null)))
+				java.lang.Object __temp_iterator23 = this.__hx_hashes.iterator();
+				while (haxe.lang.Runtime.toBool(haxe.lang.Runtime.callField(__temp_iterator23, "hasNext", null)))
 				{
-					java.lang.String __temp_field16 = haxe.lang.Runtime.toString(haxe.lang.Runtime.callField(__temp_iterator24, "next", null));
-					baseArr.push(__temp_field16);
+					java.lang.String __temp_field18 = haxe.lang.Runtime.toString(haxe.lang.Runtime.callField(__temp_iterator23, "next", null));
+					baseArr.push(__temp_field18);
 				}
 				
 			}
 			
 			{
-				java.lang.Object __temp_iterator25 = this.__hx_hashes_f.iterator();
-				while (haxe.lang.Runtime.toBool(haxe.lang.Runtime.callField(__temp_iterator25, "hasNext", null)))
+				java.lang.Object __temp_iterator24 = this.__hx_hashes_f.iterator();
+				while (haxe.lang.Runtime.toBool(haxe.lang.Runtime.callField(__temp_iterator24, "hasNext", null)))
 				{
-					java.lang.String __temp_field15 = haxe.lang.Runtime.toString(haxe.lang.Runtime.callField(__temp_iterator25, "next", null));
-					baseArr.push(__temp_field15);
+					java.lang.String __temp_field17 = haxe.lang.Runtime.toString(haxe.lang.Runtime.callField(__temp_iterator24, "next", null));
+					baseArr.push(__temp_field17);
 				}
 				
 			}

@@ -18,7 +18,7 @@ public  class Type extends haxe.lang.HxObject
 	}
 	
 	
-	public static   void __hx_ctor__Type(haxe.root.Type __temp_me6)
+	public static   void __hx_ctor__Type(haxe.root.Type __temp_me7)
 	{
 		{
 		}
@@ -26,7 +26,7 @@ public  class Type extends haxe.lang.HxObject
 	}
 	
 	
-	public static  <T> java.lang.Class<T> getClass(T o)
+	public static  <T> java.lang.Class getClass(T o)
 	{
 		
 		if (o == null || o instanceof haxe.lang.DynamicObject || o instanceof java.lang.Class)
@@ -74,12 +74,13 @@ public  class Type extends haxe.lang.HxObject
 		
 		{
 			java.lang.String __temp_svar77 = (name);
+			int __temp_hash79 = __temp_svar77.hashCode();
 			boolean __temp_executeDef78 = true;
-			switch (__temp_svar77.hashCode())
+			switch (__temp_hash79)
 			{
-				case 104431:
+				case -672261858:case 104431:
 				{
-					if (__temp_svar77.equals("int")) 
+					if (( (( ( __temp_hash79 == -672261858 ) && __temp_svar77.equals("Integer") )) || __temp_svar77.equals("int") )) 
 					{
 						__temp_executeDef78 = false;
 						return "Int";
@@ -101,33 +102,9 @@ public  class Type extends haxe.lang.HxObject
 				}
 				
 				
-				case -672261858:
+				case 2052876273:case -1325958191:
 				{
-					if (__temp_svar77.equals("Integer")) 
-					{
-						__temp_executeDef78 = false;
-						return "Int";
-					}
-					
-					break;
-				}
-				
-				
-				case 2052876273:
-				{
-					if (__temp_svar77.equals("Double")) 
-					{
-						__temp_executeDef78 = false;
-						return "Float";
-					}
-					
-					break;
-				}
-				
-				
-				case -1325958191:
-				{
-					if (__temp_svar77.equals("double")) 
+					if (( (( ( __temp_hash79 == 2052876273 ) && __temp_svar77.equals("Double") )) || __temp_svar77.equals("double") )) 
 					{
 						__temp_executeDef78 = false;
 						return "Float";
@@ -208,7 +185,7 @@ public  class Type extends haxe.lang.HxObject
 	}
 	
 	
-	public static  <T> T createInstance(java.lang.Class<T> cl, haxe.root.Array args)
+	public static  <T> T createInstance(java.lang.Class cl, haxe.root.Array args)
 	{
 		
 			int len = args.length;
@@ -325,18 +302,18 @@ public  class Type extends haxe.lang.HxObject
 	}
 	
 	
-	public static  <T> T createEmptyInstance(java.lang.Class<T> cl)
+	public static  <T> T createEmptyInstance(java.lang.Class cl)
 	{
 		if (haxe.root.Reflect.hasField(cl, "__hx_createEmpty")) 
 		{
 			return ((T) (haxe.lang.Runtime.callField(cl, "__hx_createEmpty", null)) );
 		}
 		
-		return haxe.root.Type.createInstance(cl, new haxe.root.Array(new java.lang.Object[]{}));
+		return ((T) (haxe.root.Type.createInstance(cl, new haxe.root.Array(new java.lang.Object[]{}))) );
 	}
 	
 	
-	public static  <T> T createEnum(java.lang.Class<T> e, java.lang.String constr, haxe.root.Array params)
+	public static  <T> T createEnum(java.lang.Class e, java.lang.String constr, haxe.root.Array params)
 	{
 		
 		if (params == null || params.length == 0)
@@ -352,10 +329,10 @@ public  class Type extends haxe.lang.HxObject
 	}
 	
 	
-	public static  <T> T createEnumIndex(java.lang.Class<T> e, int index, haxe.root.Array params)
+	public static  <T> T createEnumIndex(java.lang.Class e, int index, haxe.root.Array params)
 	{
-		haxe.root.Array<java.lang.String> constr = haxe.root.Type.getEnumConstructs(((java.lang.Class) (e) ));
-		return haxe.root.Type.createEnum(e, constr.__get(index), params);
+		haxe.root.Array<java.lang.String> constr = haxe.root.Type.getEnumConstructs(e);
+		return ((T) (haxe.root.Type.createEnum(e, constr.__get(index), params)) );
 	}
 	
 	
@@ -518,9 +495,9 @@ public  class Type extends haxe.lang.HxObject
 	}
 	
 	
-	public static  <T> haxe.root.Array<T> allEnums(java.lang.Class<T> e)
+	public static  <T> haxe.root.Array<T> allEnums(java.lang.Class e)
 	{
-		haxe.root.Array<java.lang.String> ctors = haxe.root.Type.getEnumConstructs(((java.lang.Class) (e) ));
+		haxe.root.Array<java.lang.String> ctors = haxe.root.Type.getEnumConstructs(e);
 		haxe.root.Array<T> ret = new haxe.root.Array<T>(( (T[]) (new java.lang.Object[] {}) ));
 		{
 			int _g = 0;

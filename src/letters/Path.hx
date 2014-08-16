@@ -51,6 +51,7 @@ abstract Command( String ) {
     var FillColor = "F";
     var OutlineColor = "O";
 }
+typedef CommandData = T2<Array<Float>,Command>;
 typedef Point2D = {
     var x: Float;
     var y: Float;
@@ -60,7 +61,7 @@ typedef Point3D = {
     var z : Float;
 }
 typedef DimInfo     = { pos: Point2D, dim: Point2D, centre: Point2D, end: Point2D };
-typedef CommandData = T2<Array<Float>,Command>;
+
 class Path {
     
     static inline function rainbowPencilColors(){ return [   0xD2D0C1
@@ -302,7 +303,7 @@ class Path {
     
     public static inline function highlightAnd( str: String )
     {
-        trace( '_' + str + '_');
+        //trace( '_' + str + '_');
         if( str == "and" ) return 0xFF0000;
         if( str =="in" ) return 0x00ffff;
         return 0xFFCC00;
@@ -558,9 +559,7 @@ class Path {
     }
     /**
         Creates a new Array by applying function `f` to all elements of `it`.
-        
         The order of elements is preserved.
-        
         If `f` is null, the result is unspecified.
     **/
     public static inline function mapArr<A,B>( it : Iterable<A>, f : A -> B ) : Array<B> {

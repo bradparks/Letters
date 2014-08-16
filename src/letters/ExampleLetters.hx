@@ -32,12 +32,12 @@ package letters;
 import letters.Path;
 import letters.LetterResource;
 #if java 
-import letters.targetJava.BasicJava;
+import turtle.targetJava.BasicJava;
 import java.awt.Graphics2D;
 import java.awt.Color;
 import java.awt.geom.GeneralPath;
 #end
-#if js import letters.targetJS.BasicJs; #end
+#if js import turtle.targetJS.BasicJs; #end
 using letters.Path;
 class ExampleLetters #if java extends BasicJava #end {
     public var letterResource = new LetterResource();

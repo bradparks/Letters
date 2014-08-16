@@ -19,25 +19,33 @@ public  class HaxeException extends java.lang.RuntimeException
 	
 	public static   java.lang.RuntimeException wrap(java.lang.Object obj)
 	{
+		java.lang.RuntimeException ret = null;
 		if (( obj instanceof java.lang.RuntimeException )) 
 		{
-			return ((java.lang.RuntimeException) (obj) );
-		}
-		
-		if (( obj instanceof java.lang.String )) 
-		{
-			return new haxe.lang.HaxeException(((java.lang.Object) (obj) ), haxe.lang.Runtime.toString(obj), ((java.lang.Throwable) (null) ));
+			ret = ((java.lang.RuntimeException) (obj) );
 		}
 		 else 
 		{
-			if (( obj instanceof java.lang.Throwable )) 
+			if (( obj instanceof java.lang.String )) 
 			{
-				return new haxe.lang.HaxeException(((java.lang.Object) (obj) ), haxe.lang.Runtime.toString(null), ((java.lang.Throwable) (obj) ));
+				ret = new haxe.lang.HaxeException(((java.lang.Object) (obj) ), haxe.lang.Runtime.toString(obj), ((java.lang.Throwable) (null) ));
+			}
+			 else 
+			{
+				if (( obj instanceof java.lang.Throwable )) 
+				{
+					ret = new haxe.lang.HaxeException(((java.lang.Object) (obj) ), haxe.lang.Runtime.toString(null), ((java.lang.Throwable) (obj) ));
+				}
+				 else 
+				{
+					ret = new haxe.lang.HaxeException(((java.lang.Object) (obj) ), haxe.lang.Runtime.toString(null), ((java.lang.Throwable) (null) ));
+				}
+				
 			}
 			
 		}
 		
-		return new haxe.lang.HaxeException(((java.lang.Object) (obj) ), haxe.lang.Runtime.toString(null), ((java.lang.Throwable) (null) ));
+		return ret;
 	}
 	
 	

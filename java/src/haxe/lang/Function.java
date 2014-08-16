@@ -29,31 +29,31 @@ public  class Function
 			
 			case 2:
 			{
-				return this.__hx_invoke2_o(0.0, 0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), ((java.lang.Object) (__fn_dynargs.__get(1)) ));
+				return this.__hx_invoke2_o(0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(1)) ));
 			}
 			
 			
 			case 3:
 			{
-				return this.__hx_invoke3_o(0.0, 0.0, 0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), ((java.lang.Object) (__fn_dynargs.__get(1)) ), ((java.lang.Object) (__fn_dynargs.__get(2)) ));
+				return this.__hx_invoke3_o(0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(1)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(2)) ));
 			}
 			
 			
 			case 4:
 			{
-				return this.__hx_invoke4_o(0.0, 0.0, 0.0, 0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), ((java.lang.Object) (__fn_dynargs.__get(1)) ), ((java.lang.Object) (__fn_dynargs.__get(2)) ), ((java.lang.Object) (__fn_dynargs.__get(3)) ));
+				return this.__hx_invoke4_o(0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(1)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(2)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(3)) ));
 			}
 			
 			
 			case 5:
 			{
-				return this.__hx_invoke5_o(0.0, 0.0, 0.0, 0.0, 0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), ((java.lang.Object) (__fn_dynargs.__get(1)) ), ((java.lang.Object) (__fn_dynargs.__get(2)) ), ((java.lang.Object) (__fn_dynargs.__get(3)) ), ((java.lang.Object) (__fn_dynargs.__get(4)) ));
+				return this.__hx_invoke5_o(0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(1)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(2)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(3)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(4)) ));
 			}
 			
 			
 			case 6:
 			{
-				return this.__hx_invoke6_o(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), ((java.lang.Object) (__fn_dynargs.__get(1)) ), ((java.lang.Object) (__fn_dynargs.__get(2)) ), ((java.lang.Object) (__fn_dynargs.__get(3)) ), ((java.lang.Object) (__fn_dynargs.__get(4)) ), ((java.lang.Object) (__fn_dynargs.__get(5)) ));
+				return this.__hx_invoke6_o(0.0, ((java.lang.Object) (__fn_dynargs.__get(0)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(1)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(2)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(3)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(4)) ), 0.0, ((java.lang.Object) (__fn_dynargs.__get(5)) ));
 			}
 			
 			
@@ -71,7 +71,7 @@ public  class Function
 	
 	public  int __hx_arity;
 	
-	public   java.lang.Object __hx_invoke6_o(double __fn_float1, double __fn_float2, double __fn_float3, double __fn_float4, double __fn_float5, double __fn_float6, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2, java.lang.Object __fn_dyn3, java.lang.Object __fn_dyn4, java.lang.Object __fn_dyn5, java.lang.Object __fn_dyn6)
+	public   java.lang.Object __hx_invoke6_o(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2, double __fn_float3, java.lang.Object __fn_dyn3, double __fn_float4, java.lang.Object __fn_dyn4, double __fn_float5, java.lang.Object __fn_dyn5, double __fn_float6, java.lang.Object __fn_dyn6)
 	{
 		if (( this.__fn_type != 1 )) 
 		{
@@ -79,13 +79,13 @@ public  class Function
 		}
 		 else 
 		{
-			return this.__hx_invoke6_f(__fn_float1, __fn_float2, __fn_float3, __fn_float4, __fn_float5, __fn_float6, __fn_dyn1, __fn_dyn2, __fn_dyn3, __fn_dyn4, __fn_dyn5, __fn_dyn6);
+			return this.__hx_invoke6_f(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2, __fn_float3, __fn_dyn3, __fn_float4, __fn_dyn4, __fn_float5, __fn_dyn5, __fn_float6, __fn_dyn6);
 		}
 		
 	}
 	
 	
-	public   double __hx_invoke6_f(double __fn_float1, double __fn_float2, double __fn_float3, double __fn_float4, double __fn_float5, double __fn_float6, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2, java.lang.Object __fn_dyn3, java.lang.Object __fn_dyn4, java.lang.Object __fn_dyn5, java.lang.Object __fn_dyn6)
+	public   double __hx_invoke6_f(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2, double __fn_float3, java.lang.Object __fn_dyn3, double __fn_float4, java.lang.Object __fn_dyn4, double __fn_float5, java.lang.Object __fn_dyn5, double __fn_float6, java.lang.Object __fn_dyn6)
 	{
 		if (( this.__fn_type != 0 )) 
 		{
@@ -93,13 +93,13 @@ public  class Function
 		}
 		 else 
 		{
-			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke6_o(__fn_float1, __fn_float2, __fn_float3, __fn_float4, __fn_float5, __fn_float6, __fn_dyn1, __fn_dyn2, __fn_dyn3, __fn_dyn4, __fn_dyn5, __fn_dyn6))) );
+			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke6_o(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2, __fn_float3, __fn_dyn3, __fn_float4, __fn_dyn4, __fn_float5, __fn_dyn5, __fn_float6, __fn_dyn6))) );
 		}
 		
 	}
 	
 	
-	public   java.lang.Object __hx_invoke5_o(double __fn_float1, double __fn_float2, double __fn_float3, double __fn_float4, double __fn_float5, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2, java.lang.Object __fn_dyn3, java.lang.Object __fn_dyn4, java.lang.Object __fn_dyn5)
+	public   java.lang.Object __hx_invoke5_o(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2, double __fn_float3, java.lang.Object __fn_dyn3, double __fn_float4, java.lang.Object __fn_dyn4, double __fn_float5, java.lang.Object __fn_dyn5)
 	{
 		if (( this.__fn_type != 1 )) 
 		{
@@ -107,13 +107,13 @@ public  class Function
 		}
 		 else 
 		{
-			return this.__hx_invoke5_f(__fn_float1, __fn_float2, __fn_float3, __fn_float4, __fn_float5, __fn_dyn1, __fn_dyn2, __fn_dyn3, __fn_dyn4, __fn_dyn5);
+			return this.__hx_invoke5_f(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2, __fn_float3, __fn_dyn3, __fn_float4, __fn_dyn4, __fn_float5, __fn_dyn5);
 		}
 		
 	}
 	
 	
-	public   double __hx_invoke5_f(double __fn_float1, double __fn_float2, double __fn_float3, double __fn_float4, double __fn_float5, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2, java.lang.Object __fn_dyn3, java.lang.Object __fn_dyn4, java.lang.Object __fn_dyn5)
+	public   double __hx_invoke5_f(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2, double __fn_float3, java.lang.Object __fn_dyn3, double __fn_float4, java.lang.Object __fn_dyn4, double __fn_float5, java.lang.Object __fn_dyn5)
 	{
 		if (( this.__fn_type != 0 )) 
 		{
@@ -121,13 +121,13 @@ public  class Function
 		}
 		 else 
 		{
-			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke5_o(__fn_float1, __fn_float2, __fn_float3, __fn_float4, __fn_float5, __fn_dyn1, __fn_dyn2, __fn_dyn3, __fn_dyn4, __fn_dyn5))) );
+			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke5_o(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2, __fn_float3, __fn_dyn3, __fn_float4, __fn_dyn4, __fn_float5, __fn_dyn5))) );
 		}
 		
 	}
 	
 	
-	public   java.lang.Object __hx_invoke4_o(double __fn_float1, double __fn_float2, double __fn_float3, double __fn_float4, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2, java.lang.Object __fn_dyn3, java.lang.Object __fn_dyn4)
+	public   java.lang.Object __hx_invoke4_o(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2, double __fn_float3, java.lang.Object __fn_dyn3, double __fn_float4, java.lang.Object __fn_dyn4)
 	{
 		if (( this.__fn_type != 1 )) 
 		{
@@ -135,13 +135,13 @@ public  class Function
 		}
 		 else 
 		{
-			return this.__hx_invoke4_f(__fn_float1, __fn_float2, __fn_float3, __fn_float4, __fn_dyn1, __fn_dyn2, __fn_dyn3, __fn_dyn4);
+			return this.__hx_invoke4_f(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2, __fn_float3, __fn_dyn3, __fn_float4, __fn_dyn4);
 		}
 		
 	}
 	
 	
-	public   double __hx_invoke4_f(double __fn_float1, double __fn_float2, double __fn_float3, double __fn_float4, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2, java.lang.Object __fn_dyn3, java.lang.Object __fn_dyn4)
+	public   double __hx_invoke4_f(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2, double __fn_float3, java.lang.Object __fn_dyn3, double __fn_float4, java.lang.Object __fn_dyn4)
 	{
 		if (( this.__fn_type != 0 )) 
 		{
@@ -149,13 +149,13 @@ public  class Function
 		}
 		 else 
 		{
-			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke4_o(__fn_float1, __fn_float2, __fn_float3, __fn_float4, __fn_dyn1, __fn_dyn2, __fn_dyn3, __fn_dyn4))) );
+			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke4_o(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2, __fn_float3, __fn_dyn3, __fn_float4, __fn_dyn4))) );
 		}
 		
 	}
 	
 	
-	public   java.lang.Object __hx_invoke3_o(double __fn_float1, double __fn_float2, double __fn_float3, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2, java.lang.Object __fn_dyn3)
+	public   java.lang.Object __hx_invoke3_o(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2, double __fn_float3, java.lang.Object __fn_dyn3)
 	{
 		if (( this.__fn_type != 1 )) 
 		{
@@ -163,13 +163,13 @@ public  class Function
 		}
 		 else 
 		{
-			return this.__hx_invoke3_f(__fn_float1, __fn_float2, __fn_float3, __fn_dyn1, __fn_dyn2, __fn_dyn3);
+			return this.__hx_invoke3_f(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2, __fn_float3, __fn_dyn3);
 		}
 		
 	}
 	
 	
-	public   double __hx_invoke3_f(double __fn_float1, double __fn_float2, double __fn_float3, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2, java.lang.Object __fn_dyn3)
+	public   double __hx_invoke3_f(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2, double __fn_float3, java.lang.Object __fn_dyn3)
 	{
 		if (( this.__fn_type != 0 )) 
 		{
@@ -177,13 +177,13 @@ public  class Function
 		}
 		 else 
 		{
-			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke3_o(__fn_float1, __fn_float2, __fn_float3, __fn_dyn1, __fn_dyn2, __fn_dyn3))) );
+			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke3_o(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2, __fn_float3, __fn_dyn3))) );
 		}
 		
 	}
 	
 	
-	public   java.lang.Object __hx_invoke2_o(double __fn_float1, double __fn_float2, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2)
+	public   java.lang.Object __hx_invoke2_o(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2)
 	{
 		if (( this.__fn_type != 1 )) 
 		{
@@ -191,13 +191,13 @@ public  class Function
 		}
 		 else 
 		{
-			return this.__hx_invoke2_f(__fn_float1, __fn_float2, __fn_dyn1, __fn_dyn2);
+			return this.__hx_invoke2_f(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2);
 		}
 		
 	}
 	
 	
-	public   double __hx_invoke2_f(double __fn_float1, double __fn_float2, java.lang.Object __fn_dyn1, java.lang.Object __fn_dyn2)
+	public   double __hx_invoke2_f(double __fn_float1, java.lang.Object __fn_dyn1, double __fn_float2, java.lang.Object __fn_dyn2)
 	{
 		if (( this.__fn_type != 0 )) 
 		{
@@ -205,7 +205,7 @@ public  class Function
 		}
 		 else 
 		{
-			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke2_o(__fn_float1, __fn_float2, __fn_dyn1, __fn_dyn2))) );
+			return ((double) (haxe.lang.Runtime.toDouble(this.__hx_invoke2_o(__fn_float1, __fn_dyn1, __fn_float2, __fn_dyn2))) );
 		}
 		
 	}

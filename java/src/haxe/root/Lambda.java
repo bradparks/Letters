@@ -18,7 +18,7 @@ public  class Lambda extends haxe.lang.HxObject
 	}
 	
 	
-	public static   void __hx_ctor__Lambda(haxe.root.Lambda __temp_me2)
+	public static   void __hx_ctor__Lambda(haxe.root.Lambda __temp_me3)
 	{
 		{
 		}
@@ -30,10 +30,10 @@ public  class Lambda extends haxe.lang.HxObject
 	{
 		haxe.root.Array<A> a = new haxe.root.Array<A>();
 		{
-			java.lang.Object __temp_iterator22 = ((java.lang.Object) (haxe.lang.Runtime.callField(it, "iterator", null)) );
-			while (haxe.lang.Runtime.toBool(haxe.lang.Runtime.callField(__temp_iterator22, "hasNext", null)))
+			java.lang.Object __temp_iterator21 = ((java.lang.Object) (haxe.lang.Runtime.callField(it, "iterator", null)) );
+			while (haxe.lang.Runtime.toBool(haxe.lang.Runtime.callField(__temp_iterator21, "hasNext", null)))
 			{
-				A i = ((A) (haxe.lang.Runtime.callField(__temp_iterator22, "next", null)) );
+				A i = ((A) (haxe.lang.Runtime.callField(__temp_iterator21, "next", null)) );
 				a.push(i);
 			}
 			
@@ -47,10 +47,10 @@ public  class Lambda extends haxe.lang.HxObject
 	{
 		haxe.root.List<B> l = new haxe.root.List<B>();
 		{
-			java.lang.Object __temp_iterator23 = ((java.lang.Object) (haxe.lang.Runtime.callField(it, "iterator", null)) );
-			while (haxe.lang.Runtime.toBool(haxe.lang.Runtime.callField(__temp_iterator23, "hasNext", null)))
+			java.lang.Object __temp_iterator22 = ((java.lang.Object) (haxe.lang.Runtime.callField(it, "iterator", null)) );
+			while (haxe.lang.Runtime.toBool(haxe.lang.Runtime.callField(__temp_iterator22, "hasNext", null)))
 			{
-				A x = ((A) (haxe.lang.Runtime.callField(__temp_iterator23, "next", null)) );
+				A x = ((A) (haxe.lang.Runtime.callField(__temp_iterator22, "next", null)) );
 				l.add(((B) (f.__hx_invoke1_o(0.0, x)) ));
 			}
 			

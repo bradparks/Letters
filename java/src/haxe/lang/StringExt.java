@@ -154,6 +154,12 @@ public  class StringExt
 	}
 	
 	
+	public static   java.lang.String toString(java.lang.String me)
+	{
+		return me;
+	}
+	
+	
 	public static   java.lang.String toLowerCase(java.lang.String me)
 	{
 		

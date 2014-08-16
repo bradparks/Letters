@@ -18,9 +18,9 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 	}
 	
 	
-	public static  <T_c> void __hx_ctor_haxe_ds_StringMap(haxe.ds.StringMap<T_c> __temp_me9)
+	public static  <T_c> void __hx_ctor_haxe_ds_StringMap(haxe.ds.StringMap<T_c> __temp_me10)
 	{
-		__temp_me9.cachedIndex = -1;
+		__temp_me10.cachedIndex = -1;
 	}
 	
 	
@@ -123,20 +123,20 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				int flag = 0;
 				do 
 				{
-					boolean __temp_stmt80 = false;
+					boolean __temp_stmt81 = false;
 					{
 						int v = flag = hashes1[i];
-						__temp_stmt80 = ( (( v & -2 )) == 0 );
+						__temp_stmt81 = ( (( v & -2 )) == 0 );
 					}
 					
-					boolean __temp_boolv81 = false;
-					if ( ! (__temp_stmt80) ) 
+					boolean __temp_boolv82 = false;
+					if ( ! (__temp_stmt81) ) 
 					{
-						__temp_boolv81 = ( ( flag == k ) && haxe.lang.Runtime.valEq(this._keys[i], key) );
+						__temp_boolv82 = ( ( flag == k ) && haxe.lang.Runtime.valEq(this._keys[i], key) );
 					}
 					
-					boolean __temp_stmt79 = ( __temp_stmt80 || __temp_boolv81 );
-					if ( ! ((__temp_stmt79)) ) 
+					boolean __temp_stmt80 = ( __temp_stmt81 || __temp_boolv82 );
+					if ( ! ((__temp_stmt80)) ) 
 					{
 						i = ( ( i +  ++ nProbes ) & mask );
 					}
@@ -152,8 +152,8 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 			
 		}
 		
-		int flag = hashes1[x];
-		if (( flag == 0 )) 
+		int flag1 = hashes1[x];
+		if (( flag1 == 0 )) 
 		{
 			keys[x] = key;
 			this.vals[x] = value;
@@ -163,7 +163,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 		}
 		 else 
 		{
-			if (( flag == 1 )) 
+			if (( flag1 == 1 )) 
 			{
 				keys[x] = key;
 				this.vals[x] = value;
@@ -215,28 +215,28 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				hash = ret;
 			}
 			
-			int k = hash;
+			int k1 = hash;
 			int nProbes = 0;
-			int i = ( k & mask );
+			int i = ( k1 & mask );
 			int last = i;
 			int flag = 0;
 			do 
 			{
-				boolean __temp_stmt85 = false;
+				boolean __temp_stmt86 = false;
 				{
 					int v = flag = hashes[i];
-					__temp_stmt85 = ( v == 0 );
+					__temp_stmt86 = ( v == 0 );
 				}
 				
-				boolean __temp_boolv84 =  ! (__temp_stmt85) ;
-				boolean __temp_boolv83 = false;
-				if (__temp_boolv84) 
+				boolean __temp_boolv85 =  ! (__temp_stmt86) ;
+				boolean __temp_boolv84 = false;
+				if (__temp_boolv85) 
 				{
-					__temp_boolv83 = (( ( ( flag == 1 ) || ( flag != k ) ) ||  ! (haxe.lang.Runtime.valEq(keys[i], key))  ));
+					__temp_boolv84 = (( ( ( flag == 1 ) || ( flag != k1 ) ) ||  ! (haxe.lang.Runtime.valEq(keys[i], key))  ));
 				}
 				
-				boolean __temp_stmt82 = ( __temp_boolv84 && __temp_boolv83 );
-				if (__temp_stmt82) 
+				boolean __temp_stmt83 = ( __temp_boolv85 && __temp_boolv84 );
+				if (__temp_stmt83) 
 				{
 					i = ( ( i +  ++ nProbes ) & mask );
 				}
@@ -325,14 +325,14 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 			int newMask = ( newNBuckets - 1 );
 			while ((  ++ j < nBuckets ))
 			{
-				int k = 0;
-				boolean __temp_stmt86 = false;
+				int k1 = 0;
+				boolean __temp_stmt87 = false;
 				{
-					int v = k = hashes[j];
-					__temp_stmt86 = ( (( v & -2 )) == 0 );
+					int v1 = k1 = hashes[j];
+					__temp_stmt87 = ( (( v1 & -2 )) == 0 );
 				}
 				
-				if ( ! (__temp_stmt86) ) 
+				if ( ! (__temp_stmt87) ) 
 				{
 					java.lang.String key = _keys[j];
 					T val = vals[j];
@@ -340,28 +340,28 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 					while (true)
 					{
 						int nProbes = 0;
-						int i = ( k & newMask );
+						int i = ( k1 & newMask );
 						while ( ! ((( newHash[i] == 0 ))) )
 						{
 							i = ( ( i +  ++ nProbes ) & newMask );
 						}
 						
-						newHash[i] = k;
-						boolean __temp_boolv89 = ( i < nBuckets );
-						boolean __temp_boolv88 = false;
-						if (__temp_boolv89) 
+						newHash[i] = k1;
+						boolean __temp_boolv90 = ( i < nBuckets );
+						boolean __temp_boolv89 = false;
+						if (__temp_boolv90) 
 						{
-							boolean __temp_stmt90 = false;
+							boolean __temp_stmt91 = false;
 							{
-								int v = k = hashes[i];
-								__temp_stmt90 = ( (( v & -2 )) == 0 );
+								int v2 = k1 = hashes[i];
+								__temp_stmt91 = ( (( v2 & -2 )) == 0 );
 							}
 							
-							__temp_boolv88 =  ! (__temp_stmt90) ;
+							__temp_boolv89 =  ! (__temp_stmt91) ;
 						}
 						
-						boolean __temp_stmt87 = ( __temp_boolv89 && __temp_boolv88 );
-						if (__temp_stmt87) 
+						boolean __temp_stmt88 = ( __temp_boolv90 && __temp_boolv89 );
+						if (__temp_stmt88) 
 						{
 							{
 								java.lang.String tmp = _keys[i];
@@ -370,9 +370,9 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 							}
 							
 							{
-								T tmp = vals[i];
+								T tmp1 = vals[i];
 								vals[i] = val;
-								val = tmp;
+								val = tmp1;
 							}
 							
 							hashes[i] = 1;
@@ -393,15 +393,15 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 			if (( nBuckets > newNBuckets )) 
 			{
 				{
-					java.lang.String[] k = new java.lang.String[((int) (newNBuckets) )];
-					java.lang.System.arraycopy(((java.lang.Object) (_keys) ), ((int) (0) ), ((java.lang.Object) (k) ), ((int) (0) ), ((int) (newNBuckets) ));
-					this._keys = k;
+					java.lang.String[] k2 = new java.lang.String[((int) (newNBuckets) )];
+					java.lang.System.arraycopy(((java.lang.Object) (_keys) ), ((int) (0) ), ((java.lang.Object) (k2) ), ((int) (0) ), ((int) (newNBuckets) ));
+					this._keys = k2;
 				}
 				
 				{
-					T[] v = ((T[]) (((java.lang.Object) (new java.lang.Object[((int) (newNBuckets) )]) )) );
-					java.lang.System.arraycopy(((java.lang.Object) (vals) ), ((int) (0) ), ((java.lang.Object) (v) ), ((int) (0) ), ((int) (newNBuckets) ));
-					this.vals = v;
+					T[] v3 = ((T[]) (((java.lang.Object) (new java.lang.Object[((int) (newNBuckets) )]) )) );
+					java.lang.System.arraycopy(((java.lang.Object) (vals) ), ((int) (0) ), ((java.lang.Object) (v3) ), ((int) (0) ), ((int) (newNBuckets) ));
+					this.vals = v3;
 				}
 				
 			}
@@ -458,14 +458,14 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 	@Override public   double __hx_setField_f(java.lang.String field, double value, boolean handleProperties)
 	{
 		{
-			boolean __temp_executeDef91 = true;
+			boolean __temp_executeDef92 = true;
 			switch (field.hashCode())
 			{
 				case 1005083856:
 				{
 					if (field.equals("cachedIndex")) 
 					{
-						__temp_executeDef91 = false;
+						__temp_executeDef92 = false;
 						this.cachedIndex = ((int) (value) );
 						return value;
 					}
@@ -478,7 +478,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("nBuckets")) 
 					{
-						__temp_executeDef91 = false;
+						__temp_executeDef92 = false;
 						this.nBuckets = ((int) (value) );
 						return value;
 					}
@@ -491,7 +491,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("upperBound")) 
 					{
-						__temp_executeDef91 = false;
+						__temp_executeDef92 = false;
 						this.upperBound = ((int) (value) );
 						return value;
 					}
@@ -504,7 +504,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("size")) 
 					{
-						__temp_executeDef91 = false;
+						__temp_executeDef92 = false;
 						this.size = ((int) (value) );
 						return value;
 					}
@@ -517,7 +517,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("nOccupied")) 
 					{
-						__temp_executeDef91 = false;
+						__temp_executeDef92 = false;
 						this.nOccupied = ((int) (value) );
 						return value;
 					}
@@ -528,7 +528,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				
 			}
 			
-			if (__temp_executeDef91) 
+			if (__temp_executeDef92) 
 			{
 				return super.__hx_setField_f(field, value, handleProperties);
 			}
@@ -545,14 +545,14 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 	@Override public   java.lang.Object __hx_setField(java.lang.String field, java.lang.Object value, boolean handleProperties)
 	{
 		{
-			boolean __temp_executeDef92 = true;
+			boolean __temp_executeDef93 = true;
 			switch (field.hashCode())
 			{
 				case 1005083856:
 				{
 					if (field.equals("cachedIndex")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this.cachedIndex = ((int) (haxe.lang.Runtime.toInt(value)) );
 						return value;
 					}
@@ -565,7 +565,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("hashes")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this.hashes = ((int[]) (value) );
 						return value;
 					}
@@ -578,7 +578,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("cachedKey")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this.cachedKey = haxe.lang.Runtime.toString(value);
 						return value;
 					}
@@ -591,7 +591,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("_keys")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this._keys = ((java.lang.String[]) (value) );
 						return value;
 					}
@@ -604,7 +604,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("upperBound")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this.upperBound = ((int) (haxe.lang.Runtime.toInt(value)) );
 						return value;
 					}
@@ -617,7 +617,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("vals")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this.vals = ((T[]) (value) );
 						return value;
 					}
@@ -630,7 +630,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("nOccupied")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this.nOccupied = ((int) (haxe.lang.Runtime.toInt(value)) );
 						return value;
 					}
@@ -643,7 +643,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("nBuckets")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this.nBuckets = ((int) (haxe.lang.Runtime.toInt(value)) );
 						return value;
 					}
@@ -656,7 +656,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("size")) 
 					{
-						__temp_executeDef92 = false;
+						__temp_executeDef93 = false;
 						this.size = ((int) (haxe.lang.Runtime.toInt(value)) );
 						return value;
 					}
@@ -667,7 +667,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				
 			}
 			
-			if (__temp_executeDef92) 
+			if (__temp_executeDef93) 
 			{
 				return super.__hx_setField(field, value, handleProperties);
 			}
@@ -684,14 +684,14 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 	@Override public   java.lang.Object __hx_getField(java.lang.String field, boolean throwErrors, boolean isCheck, boolean handleProperties)
 	{
 		{
-			boolean __temp_executeDef93 = true;
+			boolean __temp_executeDef94 = true;
 			switch (field.hashCode())
 			{
 				case -1289358244:
 				{
 					if (field.equals("exists")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("exists"))) );
 					}
 					
@@ -703,7 +703,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("hashes")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this.hashes;
 					}
 					
@@ -715,7 +715,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("get")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("get"))) );
 					}
 					
@@ -727,7 +727,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("_keys")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this._keys;
 					}
 					
@@ -739,7 +739,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("resize")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("resize"))) );
 					}
 					
@@ -751,7 +751,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("vals")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this.vals;
 					}
 					
@@ -763,7 +763,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("lookup")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("lookup"))) );
 					}
 					
@@ -775,7 +775,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("nBuckets")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this.nBuckets;
 					}
 					
@@ -787,7 +787,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("set")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("set"))) );
 					}
 					
@@ -799,7 +799,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("size")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this.size;
 					}
 					
@@ -811,7 +811,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("cachedIndex")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this.cachedIndex;
 					}
 					
@@ -823,7 +823,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("nOccupied")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this.nOccupied;
 					}
 					
@@ -835,7 +835,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("cachedKey")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this.cachedKey;
 					}
 					
@@ -847,7 +847,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("upperBound")) 
 					{
-						__temp_executeDef93 = false;
+						__temp_executeDef94 = false;
 						return this.upperBound;
 					}
 					
@@ -857,7 +857,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				
 			}
 			
-			if (__temp_executeDef93) 
+			if (__temp_executeDef94) 
 			{
 				return super.__hx_getField(field, throwErrors, isCheck, handleProperties);
 			}
@@ -874,14 +874,14 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 	@Override public   double __hx_getField_f(java.lang.String field, boolean throwErrors, boolean handleProperties)
 	{
 		{
-			boolean __temp_executeDef94 = true;
+			boolean __temp_executeDef95 = true;
 			switch (field.hashCode())
 			{
 				case 1005083856:
 				{
 					if (field.equals("cachedIndex")) 
 					{
-						__temp_executeDef94 = false;
+						__temp_executeDef95 = false;
 						return ((double) (this.cachedIndex) );
 					}
 					
@@ -893,7 +893,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("nBuckets")) 
 					{
-						__temp_executeDef94 = false;
+						__temp_executeDef95 = false;
 						return ((double) (this.nBuckets) );
 					}
 					
@@ -905,7 +905,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("upperBound")) 
 					{
-						__temp_executeDef94 = false;
+						__temp_executeDef95 = false;
 						return ((double) (this.upperBound) );
 					}
 					
@@ -917,7 +917,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("size")) 
 					{
-						__temp_executeDef94 = false;
+						__temp_executeDef95 = false;
 						return ((double) (this.size) );
 					}
 					
@@ -929,7 +929,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("nOccupied")) 
 					{
-						__temp_executeDef94 = false;
+						__temp_executeDef95 = false;
 						return ((double) (this.nOccupied) );
 					}
 					
@@ -939,7 +939,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				
 			}
 			
-			if (__temp_executeDef94) 
+			if (__temp_executeDef95) 
 			{
 				return super.__hx_getField_f(field, throwErrors, handleProperties);
 			}
@@ -956,14 +956,14 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 	@Override public   java.lang.Object __hx_invokeField(java.lang.String field, haxe.root.Array dynargs)
 	{
 		{
-			boolean __temp_executeDef95 = true;
+			boolean __temp_executeDef96 = true;
 			switch (field.hashCode())
 			{
 				case -1289358244:
 				{
 					if (field.equals("exists")) 
 					{
-						__temp_executeDef95 = false;
+						__temp_executeDef96 = false;
 						return this.exists(haxe.lang.Runtime.toString(dynargs.__get(0)));
 					}
 					
@@ -975,7 +975,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("set")) 
 					{
-						__temp_executeDef95 = false;
+						__temp_executeDef96 = false;
 						this.set(haxe.lang.Runtime.toString(dynargs.__get(0)), ((T) (dynargs.__get(1)) ));
 					}
 					
@@ -987,7 +987,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("get")) 
 					{
-						__temp_executeDef95 = false;
+						__temp_executeDef96 = false;
 						return this.get(haxe.lang.Runtime.toString(dynargs.__get(0)));
 					}
 					
@@ -999,7 +999,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("lookup")) 
 					{
-						__temp_executeDef95 = false;
+						__temp_executeDef96 = false;
 						return this.lookup(haxe.lang.Runtime.toString(dynargs.__get(0)));
 					}
 					
@@ -1011,7 +1011,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				{
 					if (field.equals("resize")) 
 					{
-						__temp_executeDef95 = false;
+						__temp_executeDef96 = false;
 						this.resize(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ));
 					}
 					
@@ -1021,7 +1021,7 @@ public  class StringMap<T> extends haxe.lang.HxObject implements haxe.root.IMap<
 				
 			}
 			
-			if (__temp_executeDef95) 
+			if (__temp_executeDef96) 
 			{
 				return super.__hx_invokeField(field, dynargs);
 			}

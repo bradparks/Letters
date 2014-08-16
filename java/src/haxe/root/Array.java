@@ -251,12 +251,12 @@ public final class Array<T> extends haxe.lang.HxObject
 		T p = buf[( ( i + j ) >> 1 )];
 		while (( i <= j ))
 		{
-			while (( ((int) (f.__hx_invoke2_f(0.0, 0.0, buf[i], p)) ) < 0 ))
+			while (( ((int) (f.__hx_invoke2_f(0.0, buf[i], 0.0, p)) ) < 0 ))
 			{
 				i++;
 			}
 			
-			while (( ((int) (f.__hx_invoke2_f(0.0, 0.0, buf[j], p)) ) > 0 ))
+			while (( ((int) (f.__hx_invoke2_f(0.0, buf[j], 0.0, p)) ) > 0 ))
 			{
 				j--;
 			}
@@ -505,6 +505,85 @@ public final class Array<T> extends haxe.lang.HxObject
 	}
 	
 	
+	public final   int indexOf(T x, java.lang.Object fromIndex)
+	{
+		int len = this.length;
+		T[] a = this.__a;
+		int i = 0;
+		if (( fromIndex == null )) 
+		{
+			i = 0;
+		}
+		 else 
+		{
+			i = ((int) (haxe.lang.Runtime.toInt(fromIndex)) );
+		}
+		
+		if (( i < 0 )) 
+		{
+			i += len;
+			if (( i < 0 )) 
+			{
+				i = 0;
+			}
+			
+		}
+		
+		while (( i < len ))
+		{
+			if (haxe.lang.Runtime.eq(a[i], x)) 
+			{
+				return i;
+			}
+			
+			i++;
+		}
+		
+		return -1;
+	}
+	
+	
+	public final   int lastIndexOf(T x, java.lang.Object fromIndex)
+	{
+		int len = this.length;
+		T[] a = this.__a;
+		int i = 0;
+		if (( fromIndex == null )) 
+		{
+			i = ( len - 1 );
+		}
+		 else 
+		{
+			i = ((int) (haxe.lang.Runtime.toInt(fromIndex)) );
+		}
+		
+		if (( i >= len )) 
+		{
+			i = ( len - 1 );
+		}
+		 else 
+		{
+			if (( i < 0 )) 
+			{
+				i += len;
+			}
+			
+		}
+		
+		while (( i >= 0 ))
+		{
+			if (haxe.lang.Runtime.eq(a[i], x)) 
+			{
+				return i;
+			}
+			
+			i--;
+		}
+		
+		return -1;
+	}
+	
+	
 	public final   haxe.root.Array<T> copy()
 	{
 		int len = this.length;
@@ -517,15 +596,7 @@ public final class Array<T> extends haxe.lang.HxObject
 	
 	public final   java.lang.Object iterator()
 	{
-		haxe.root.Array<haxe.root.Array> _g = new haxe.root.Array<haxe.root.Array>(new haxe.root.Array[]{((haxe.root.Array) (this) )});
-		haxe.root.Array<java.lang.Object> i = new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{0});
-		haxe.root.Array<java.lang.Object> len = new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{this.length});
-		{
-			haxe.lang.Function __temp_odecl57 = new haxe.root.Array_iterator_380__Fun(((haxe.root.Array<java.lang.Object>) (len) ), ((haxe.root.Array<java.lang.Object>) (i) ));
-			haxe.lang.Function __temp_odecl58 = new haxe.root.Array_iterator_381__Fun<T>(((haxe.root.Array<java.lang.Object>) (i) ), ((haxe.root.Array<haxe.root.Array>) (_g) ));
-			return new haxe.lang.DynamicObject(new haxe.root.Array<java.lang.String>(new java.lang.String[]{"hasNext", "next"}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{__temp_odecl57, __temp_odecl58}), new haxe.root.Array<java.lang.String>(new java.lang.String[]{}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{}));
-		}
-		
+		return new _Array.ArrayIterator<T>(((haxe.root.Array<T>) (this) ));
 	}
 	
 	
@@ -627,14 +698,14 @@ public final class Array<T> extends haxe.lang.HxObject
 	@Override public   double __hx_setField_f(java.lang.String field, double value, boolean handleProperties)
 	{
 		{
-			boolean __temp_executeDef59 = true;
+			boolean __temp_executeDef56 = true;
 			switch (field.hashCode())
 			{
 				case -1106363674:
 				{
 					if (field.equals("length")) 
 					{
-						__temp_executeDef59 = false;
+						__temp_executeDef56 = false;
 						this.length = ((int) (value) );
 						return value;
 					}
@@ -645,7 +716,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				
 			}
 			
-			if (__temp_executeDef59) 
+			if (__temp_executeDef56) 
 			{
 				return super.__hx_setField_f(field, value, handleProperties);
 			}
@@ -662,14 +733,14 @@ public final class Array<T> extends haxe.lang.HxObject
 	@Override public   java.lang.Object __hx_setField(java.lang.String field, java.lang.Object value, boolean handleProperties)
 	{
 		{
-			boolean __temp_executeDef60 = true;
+			boolean __temp_executeDef57 = true;
 			switch (field.hashCode())
 			{
 				case 94337:
 				{
 					if (field.equals("__a")) 
 					{
-						__temp_executeDef60 = false;
+						__temp_executeDef57 = false;
 						this.__a = ((T[]) (value) );
 						return value;
 					}
@@ -682,7 +753,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("length")) 
 					{
-						__temp_executeDef60 = false;
+						__temp_executeDef57 = false;
 						this.length = ((int) (haxe.lang.Runtime.toInt(value)) );
 						return value;
 					}
@@ -693,7 +764,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				
 			}
 			
-			if (__temp_executeDef60) 
+			if (__temp_executeDef57) 
 			{
 				return super.__hx_setField(field, value, handleProperties);
 			}
@@ -710,14 +781,14 @@ public final class Array<T> extends haxe.lang.HxObject
 	@Override public   java.lang.Object __hx_getField(java.lang.String field, boolean throwErrors, boolean isCheck, boolean handleProperties)
 	{
 		{
-			boolean __temp_executeDef61 = true;
+			boolean __temp_executeDef58 = true;
 			switch (field.hashCode())
 			{
 				case -537840087:
 				{
 					if (field.equals("__unsafe_set")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("__unsafe_set"))) );
 					}
 					
@@ -729,7 +800,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("length")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return this.length;
 					}
 					
@@ -741,7 +812,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("__unsafe_get")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("__unsafe_get"))) );
 					}
 					
@@ -753,7 +824,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("__a")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return this.__a;
 					}
 					
@@ -765,7 +836,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("__set")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("__set"))) );
 					}
 					
@@ -777,7 +848,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("concat")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("concat"))) );
 					}
 					
@@ -789,7 +860,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("__get")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("__get"))) );
 					}
 					
@@ -801,7 +872,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("concatNative")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("concatNative"))) );
 					}
 					
@@ -813,7 +884,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("filter")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("filter"))) );
 					}
 					
@@ -825,7 +896,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("join")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("join"))) );
 					}
 					
@@ -837,7 +908,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("map")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("map"))) );
 					}
 					
@@ -849,7 +920,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("pop")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("pop"))) );
 					}
 					
@@ -861,7 +932,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("iterator")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("iterator"))) );
 					}
 					
@@ -873,7 +944,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("push")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("push"))) );
 					}
 					
@@ -885,7 +956,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("copy")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("copy"))) );
 					}
 					
@@ -897,7 +968,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("reverse")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("reverse"))) );
 					}
 					
@@ -905,12 +976,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -934610812:
+				case -467511597:
 				{
-					if (field.equals("remove")) 
+					if (field.equals("lastIndexOf")) 
 					{
-						__temp_executeDef61 = false;
-						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("remove"))) );
+						__temp_executeDef58 = false;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("lastIndexOf"))) );
 					}
 					
 					break;
@@ -921,7 +992,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("shift")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("shift"))) );
 					}
 					
@@ -929,12 +1000,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -1183792455:
+				case 1943291465:
 				{
-					if (field.equals("insert")) 
+					if (field.equals("indexOf")) 
 					{
-						__temp_executeDef61 = false;
-						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("insert"))) );
+						__temp_executeDef58 = false;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("indexOf"))) );
 					}
 					
 					break;
@@ -945,7 +1016,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("slice")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("slice"))) );
 					}
 					
@@ -953,12 +1024,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -277637751:
+				case -934610812:
 				{
-					if (field.equals("unshift")) 
+					if (field.equals("remove")) 
 					{
-						__temp_executeDef61 = false;
-						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("unshift"))) );
+						__temp_executeDef58 = false;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("remove"))) );
 					}
 					
 					break;
@@ -969,7 +1040,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("sort")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("sort"))) );
 					}
 					
@@ -977,12 +1048,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -1776922004:
+				case -1183792455:
 				{
-					if (field.equals("toString")) 
+					if (field.equals("insert")) 
 					{
-						__temp_executeDef61 = false;
-						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("toString"))) );
+						__temp_executeDef58 = false;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("insert"))) );
 					}
 					
 					break;
@@ -993,7 +1064,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("quicksort")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("quicksort"))) );
 					}
 					
@@ -1001,12 +1072,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -821858768:
+				case -277637751:
 				{
-					if (field.equals("spliceVoid")) 
+					if (field.equals("unshift")) 
 					{
-						__temp_executeDef61 = false;
-						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("spliceVoid"))) );
+						__temp_executeDef58 = false;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("unshift"))) );
 					}
 					
 					break;
@@ -1017,8 +1088,32 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("splice")) 
 					{
-						__temp_executeDef61 = false;
+						__temp_executeDef58 = false;
 						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("splice"))) );
+					}
+					
+					break;
+				}
+				
+				
+				case -1776922004:
+				{
+					if (field.equals("toString")) 
+					{
+						__temp_executeDef58 = false;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("toString"))) );
+					}
+					
+					break;
+				}
+				
+				
+				case -821858768:
+				{
+					if (field.equals("spliceVoid")) 
+					{
+						__temp_executeDef58 = false;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(((java.lang.Object) (this) ), haxe.lang.Runtime.toString("spliceVoid"))) );
 					}
 					
 					break;
@@ -1027,7 +1122,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				
 			}
 			
-			if (__temp_executeDef61) 
+			if (__temp_executeDef58) 
 			{
 				return super.__hx_getField(field, throwErrors, isCheck, handleProperties);
 			}
@@ -1044,14 +1139,14 @@ public final class Array<T> extends haxe.lang.HxObject
 	@Override public   double __hx_getField_f(java.lang.String field, boolean throwErrors, boolean handleProperties)
 	{
 		{
-			boolean __temp_executeDef62 = true;
+			boolean __temp_executeDef59 = true;
 			switch (field.hashCode())
 			{
 				case -1106363674:
 				{
 					if (field.equals("length")) 
 					{
-						__temp_executeDef62 = false;
+						__temp_executeDef59 = false;
 						return ((double) (this.length) );
 					}
 					
@@ -1061,7 +1156,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				
 			}
 			
-			if (__temp_executeDef62) 
+			if (__temp_executeDef59) 
 			{
 				return super.__hx_getField_f(field, throwErrors, handleProperties);
 			}
@@ -1078,14 +1173,14 @@ public final class Array<T> extends haxe.lang.HxObject
 	@Override public   java.lang.Object __hx_invokeField(java.lang.String field, haxe.root.Array dynargs)
 	{
 		{
-			boolean __temp_executeDef63 = true;
+			boolean __temp_executeDef60 = true;
 			switch (field.hashCode())
 			{
 				case -537840087:
 				{
 					if (field.equals("__unsafe_set")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.__unsafe_set(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), ((T) (dynargs.__get(1)) ));
 					}
 					
@@ -1097,7 +1192,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("concat")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.concat(((haxe.root.Array<T>) (dynargs.__get(0)) ));
 					}
 					
@@ -1109,7 +1204,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("__unsafe_get")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.__unsafe_get(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ));
 					}
 					
@@ -1121,7 +1216,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("concatNative")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						this.concatNative(((T[]) (dynargs.__get(0)) ));
 					}
 					
@@ -1133,7 +1228,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("__set")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.__set(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), ((T) (dynargs.__get(1)) ));
 					}
 					
@@ -1145,7 +1240,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("join")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.join(haxe.lang.Runtime.toString(dynargs.__get(0)));
 					}
 					
@@ -1157,7 +1252,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("__get")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.__get(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ));
 					}
 					
@@ -1169,7 +1264,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("pop")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.pop();
 					}
 					
@@ -1181,7 +1276,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("filter")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.filter(((haxe.lang.Function) (dynargs.__get(0)) ));
 					}
 					
@@ -1193,7 +1288,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("push")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.push(((T) (dynargs.__get(0)) ));
 					}
 					
@@ -1205,7 +1300,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("map")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.map(((haxe.lang.Function) (dynargs.__get(0)) ));
 					}
 					
@@ -1217,7 +1312,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("reverse")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						this.reverse();
 					}
 					
@@ -1229,7 +1324,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("iterator")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.iterator();
 					}
 					
@@ -1241,7 +1336,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("shift")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.shift();
 					}
 					
@@ -1253,7 +1348,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("copy")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.copy();
 					}
 					
@@ -1265,7 +1360,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("slice")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.slice(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), dynargs.__get(1));
 					}
 					
@@ -1273,12 +1368,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -934610812:
+				case -467511597:
 				{
-					if (field.equals("remove")) 
+					if (field.equals("lastIndexOf")) 
 					{
-						__temp_executeDef63 = false;
-						return this.remove(((T) (dynargs.__get(0)) ));
+						__temp_executeDef60 = false;
+						return this.lastIndexOf(((T) (dynargs.__get(0)) ), dynargs.__get(1));
 					}
 					
 					break;
@@ -1289,7 +1384,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("sort")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						this.sort(((haxe.lang.Function) (dynargs.__get(0)) ));
 					}
 					
@@ -1297,12 +1392,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -1183792455:
+				case 1943291465:
 				{
-					if (field.equals("insert")) 
+					if (field.equals("indexOf")) 
 					{
-						__temp_executeDef63 = false;
-						this.insert(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), ((T) (dynargs.__get(1)) ));
+						__temp_executeDef60 = false;
+						return this.indexOf(((T) (dynargs.__get(0)) ), dynargs.__get(1));
 					}
 					
 					break;
@@ -1313,7 +1408,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("quicksort")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						this.quicksort(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), ((int) (haxe.lang.Runtime.toInt(dynargs.__get(1))) ), ((haxe.lang.Function) (dynargs.__get(2)) ));
 					}
 					
@@ -1321,12 +1416,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -277637751:
+				case -934610812:
 				{
-					if (field.equals("unshift")) 
+					if (field.equals("remove")) 
 					{
-						__temp_executeDef63 = false;
-						this.unshift(((T) (dynargs.__get(0)) ));
+						__temp_executeDef60 = false;
+						return this.remove(((T) (dynargs.__get(0)) ));
 					}
 					
 					break;
@@ -1337,7 +1432,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("splice")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						return this.splice(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), ((int) (haxe.lang.Runtime.toInt(dynargs.__get(1))) ));
 					}
 					
@@ -1345,12 +1440,12 @@ public final class Array<T> extends haxe.lang.HxObject
 				}
 				
 				
-				case -1776922004:
+				case -1183792455:
 				{
-					if (field.equals("toString")) 
+					if (field.equals("insert")) 
 					{
-						__temp_executeDef63 = false;
-						return this.toString();
+						__temp_executeDef60 = false;
+						this.insert(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), ((T) (dynargs.__get(1)) ));
 					}
 					
 					break;
@@ -1361,8 +1456,32 @@ public final class Array<T> extends haxe.lang.HxObject
 				{
 					if (field.equals("spliceVoid")) 
 					{
-						__temp_executeDef63 = false;
+						__temp_executeDef60 = false;
 						this.spliceVoid(((int) (haxe.lang.Runtime.toInt(dynargs.__get(0))) ), ((int) (haxe.lang.Runtime.toInt(dynargs.__get(1))) ));
+					}
+					
+					break;
+				}
+				
+				
+				case -277637751:
+				{
+					if (field.equals("unshift")) 
+					{
+						__temp_executeDef60 = false;
+						this.unshift(((T) (dynargs.__get(0)) ));
+					}
+					
+					break;
+				}
+				
+				
+				case -1776922004:
+				{
+					if (field.equals("toString")) 
+					{
+						__temp_executeDef60 = false;
+						return this.toString();
 					}
 					
 					break;
@@ -1371,7 +1490,7 @@ public final class Array<T> extends haxe.lang.HxObject
 				
 			}
 			
-			if (__temp_executeDef63) 
+			if (__temp_executeDef60) 
 			{
 				return super.__hx_invokeField(field, dynargs);
 			}

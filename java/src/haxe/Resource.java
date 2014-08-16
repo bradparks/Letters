@@ -22,7 +22,7 @@ public  class Resource extends haxe.lang.HxObject
 	}
 	
 	
-	public static   void __hx_ctor_haxe_Resource(haxe.Resource __temp_me8)
+	public static   void __hx_ctor_haxe_Resource(haxe.Resource __temp_me9)
 	{
 		{
 		}

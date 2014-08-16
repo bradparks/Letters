@@ -360,7 +360,7 @@ public  class Runtime
 		java.lang.Class[] cls = new java.lang.Class[len];
 		java.lang.Object[] objs = new java.lang.Object[len];
 
-		java.lang.reflect.Method[] ms = cl.getDeclaredMethods();
+		java.lang.reflect.Method[] ms = cl.getMethods();
 		int msl = ms.length;
 		int realMsl = 0;
 		for(int i =0; i < msl; i++)
@@ -381,6 +381,10 @@ public  class Runtime
 		for (int i = 0; i < len; i++)
 		{
 			Object o = args.__get(i);
+			if (o == null)
+			{
+				continue; //can be anything
+			}
 			objs[i]= o;
 			cls[i] = o.getClass();
 			boolean isNum = false;
@@ -448,6 +452,9 @@ public  class Runtime
 							} else if (name.equals("short") || name.equals("java.lang.Short"))
 							{
 								objs[i] = ((java.lang.Number)o).shortValue();
+							} else if (name.equals("long") || name.equals("java.lang.Long"))
+							{
+								objs[i] = ((java.lang.Number)o).longValue();
 							}
 						}
 					} //else varargs not handled TODO

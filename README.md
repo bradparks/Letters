@@ -15,3 +15,5 @@ var path = Path.generateVectorText( 'text', 100., 50., .7, 300., 22.);
 path = path.rotateXYZ( Math.PI/10, Math.PI/3, Math.PI/10, 1 );
 
 then depending on platform you just iterate and switch on the path case.
+
+ADDED ability for the letters to follow an arbitrary path and a demo where users clicks generate the path.

@@ -18,9 +18,9 @@ public  class StringBuf extends haxe.lang.HxObject
 	}
 	
 	
-	public static   void __hx_ctor__StringBuf(haxe.root.StringBuf __temp_me5)
+	public static   void __hx_ctor__StringBuf(haxe.root.StringBuf __temp_me6)
 	{
-		__temp_me5.b = new java.lang.StringBuilder();
+		__temp_me6.b = new java.lang.StringBuilder();
 	}
 	
 	
@@ -38,11 +38,11 @@ public  class StringBuf extends haxe.lang.HxObject
 	
 	public  java.lang.StringBuilder b;
 	
-	public   void add(java.lang.Object x)
+	public  <T> void add(T x)
 	{
 		if (haxe.lang.Runtime.isInt(x)) 
 		{
-			int x1 = ((int) (haxe.lang.Runtime.toInt(x)) );
+			int x1 = ((int) (haxe.lang.Runtime.toInt(((java.lang.Object) (x) ))) );
 			java.lang.Object xd = x1;
 			this.b.append(((java.lang.Object) (xd) ));
 		}
