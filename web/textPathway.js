@@ -106,6 +106,17 @@ haxe.Resource.getString = function(name) {
 	}
 	return null;
 };
+haxe.Timer = function(time_ms) {
+	var me = this;
+	this.id = setInterval(function() {
+		me.run();
+	},time_ms);
+};
+haxe.Timer.__name__ = true;
+haxe.Timer.prototype = {
+	run: function() {
+	}
+};
 haxe.io = {};
 haxe.io.Bytes = function(length,b) {
 	this.length = length;
@@ -974,12 +985,12 @@ letters.paragraphPath.ParagraphPathDemo.main = function() {
 };
 letters.paragraphPath.ParagraphPathDemo.prototype = {
 	showInstructions: function() {
-		var g = turtle.Turtle.surface;
 		var coloring = letters.Path.rainbowPencilHighlight;
 		var instructions = "click on screen to create a path of forty points for the text to follow";
 		var path = letters.Path.generateVectorText(instructions,100.,50.,.7,300.,22.,null,coloring,null);
 		path = letters.Path.rotateXYZ(path,Math.PI / 10,Math.PI / 3,Math.PI / 10,1);
 		path = letters.Path.scale(path,3,3);
+		var g = turtle.Turtle.surface;
 		turtle.Turtle.drawCommands(g,path);
 	}
 	,draw: function() {
@@ -991,33 +1002,51 @@ letters.paragraphPath.ParagraphPathDemo.prototype = {
 		new letters.paragraphPath.ParagraphPathRepeat(sentence,sidePoints);
 	}
 };
-letters.paragraphPath.ParagraphPathRepeat = function(sentence,sidePoints) {
+letters.paragraphPath.ParagraphPathRepeat = function(sentence,sidePoints_) {
+	this.count = 0;
 	turtle.Turtle.surface.clearRect(0,0,Std.parseInt("1000"),Std.parseInt("800"));
-	var g = turtle.Turtle.surface;
-	var renderPath;
+	this.sidePoints = sidePoints_;
 	var coloring = letters.Path.rainbowPencilHighlight;
 	var path = letters.Path.generateVectorText(sentence,43.,200.,.7,640.,22.,null,coloring,coloring);
-	var path1 = letters.Path.translate(path,43,-197);
-	path1 = letters.Path.scale(path1,1.4,-0.3);
-	path1 = letters.Path.translate(path1,0,10);
-	renderPath = letters.pathway.Sides.mapToRouting(sidePoints,path1);
-	turtle.Turtle.drawCommands(g,renderPath);
-	letters.paragraphPath.GraphicsPoints.drawCommandsMore(renderPath);
-	var aPath;
-	var lastPath = path1;
-	var k;
-	var paragraphWidth = letters.Path.getDim(lastPath).end.x;
-	var maxY = sidePoints.length + 1;
-	while(true) {
-		aPath = letters.Path.translate(lastPath,letters.Path.getDim(path1).end.x + 1,0);
-		paragraphWidth = letters.Path.getDim(aPath).end.x;
-		if(paragraphWidth > maxY) break;
-		renderPath = letters.pathway.Sides.mapToRouting(sidePoints,aPath);
-		turtle.Turtle.drawCommands(g,renderPath);
-		lastPath = aPath;
-	}
+	this.path1 = letters.Path.translate(path,43,-197);
+	this.path1 = letters.Path.scale(this.path1,1.4,-0.3);
+	this.path1 = letters.Path.translate(this.path1,0,10);
+	this.sidePoints2 = [].concat(this.sidePoints);
+	this.redraw();
+	var timer = new haxe.Timer(30);
+	timer.run = $bind(this,this.redraw);
 };
 letters.paragraphPath.ParagraphPathRepeat.__name__ = true;
+letters.paragraphPath.ParagraphPathRepeat.prototype = {
+	redraw: function() {
+		this.count += 0.1;
+		turtle.Turtle.surface.clearRect(0,0,Std.parseInt("1000"),Std.parseInt("800"));
+		var _g1 = 0;
+		var _g = this.sidePoints.length;
+		while(_g1 < _g) {
+			var i = _g1++;
+			this.sidePoints2[i].dx = this.sidePoints[i].dx + 0.5 * Math.sin(this.count);
+			this.sidePoints2[i].dy = this.sidePoints[i].dy + 0.5 * Math.cos(this.count);
+		}
+		var renderPath = letters.pathway.Sides.mapToRouting(this.sidePoints2,this.path1);
+		var g = turtle.Turtle.surface;
+		turtle.Turtle.drawCommands(g,renderPath);
+		letters.paragraphPath.GraphicsPoints.drawCommandsMore(renderPath);
+		var aPath;
+		var lastPath = this.path1;
+		var k;
+		var paragraphWidth = letters.Path.getDim(lastPath).end.x;
+		var maxY = this.sidePoints.length + 1;
+		while(true) {
+			aPath = letters.Path.translate(lastPath,letters.Path.getDim(this.path1).end.x + 1,0);
+			paragraphWidth = letters.Path.getDim(aPath).end.x;
+			if(paragraphWidth > maxY) break;
+			renderPath = letters.pathway.Sides.mapToRouting(this.sidePoints2,aPath);
+			turtle.Turtle.drawCommands(g,renderPath);
+			lastPath = aPath;
+		}
+	}
+};
 letters.paragraphPath.PointMaker = function(tot_,fin_) {
 	this.hasFin = false;
 	this.points = [];

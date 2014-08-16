@@ -23,12 +23,12 @@ class ParagraphPathDemo {
     
     private function showInstructions()
     {
-        var g = Turtle.surface;
         var coloring = Path.rainbowPencilHighlight;
         var instructions = "click on screen to create a path of forty points for the text to follow";
         var path = Path.generateVectorText( instructions, 100., 50., .7, 300., 22., null, coloring );
         path = path.rotateXYZ( Math.PI/10, Math.PI/3, Math.PI/10, 1 );
         path = path.scale( 3, 3 );
+        var g = Turtle.surface;
         g.drawCommands( path );
     }
     
